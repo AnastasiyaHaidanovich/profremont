@@ -1,8 +1,9 @@
-const timer = (deadline) => {
+export const timer = (deadline) => {
     const timerDays = document.querySelector(".count_1>span");
     const timerHours = document.querySelector(".count_2>span");
     const timerMinutes = document.querySelector(".count_3>span");
     const timerSeconds = document.querySelector(".count_4>span");
+    let saleLabel = document.querySelector(".countdown-text");
 
     const getTimeRemain = () => {
         let dateStop = new Date(deadline).getTime();
@@ -47,9 +48,16 @@ const timer = (deadline) => {
         let getTime = getTimeRemain();
     if (getTime.timeRemain > 0){
             setInterval(updateClock, 1000);
+        } else {
+            timerDays.textContent = "00";
+            timerHours.textContent = "00";
+            timerMinutes.textContent = "00";
+            timerSeconds.textContent = "00";
+
+            let newStr = "Акция закончилась!";
+            saleLabel.innerHTML = newStr + saleLabel.innerHTML.substring(24);
         }
+
     };
     startTimer();
 };
-
-export default timer;
