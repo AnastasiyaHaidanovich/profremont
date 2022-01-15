@@ -1,4 +1,3 @@
-import { Console } from 'console';
 import { animate } from './helpers';
 
 export const modal = () => {
