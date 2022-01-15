@@ -8,4 +8,4 @@ calc();
 modal();
 modalCall();
 swiper();
-timer('22 january 2022');
+timer('16 january 2022');
