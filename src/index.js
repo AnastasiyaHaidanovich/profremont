@@ -1,7 +1,7 @@
 import {swiper} from "./modules/swiper";
 import {modal} from "./modules/modal";
 import {modalCall} from "./modules/modalCall";
-import timer from './modules/timer';
+import {timer} from './modules/timer';
 
 
 modal();
