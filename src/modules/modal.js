@@ -1,8 +1,7 @@
 import { animate } from './helpers';
 
-export const modal = () => {
-    const btn = document.querySelector(".btn-block.fancyboxModal");
-    const modal = document.querySelector(".header-modal");
+export const modal = (btn, modalClass, closeBtnClass) => {
+    const modal = document.querySelector(modalClass);
     const overlay = document.querySelector(".overlay");
 
     btn.addEventListener('click', (e) => {
@@ -58,7 +57,7 @@ export const modal = () => {
     // });
 
     modal.addEventListener('click', (e) => {
-        if(e.target.classList.contains("header-modal__close")){
+        if(e.target.classList.contains(closeBtnClass)){
             if (window.innerWidth > 768){
                 smoothClose();
             } else {
