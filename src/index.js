@@ -7,4 +7,4 @@ import {timer} from './modules/timer';
 modal();
 modalCall();
 swiper();
-timer('12 january 2022');
+timer('22 january 2022');

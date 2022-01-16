@@ -1,9 +1,9 @@
 export const timer = (deadline) => {
-    const timerDays = document.querySelector(".count_1>span");
-    const timerHours = document.querySelector(".count_2>span");
-    const timerMinutes = document.querySelector(".count_3>span");
-    const timerSeconds = document.querySelector(".count_4>span");
-    let saleLabel = document.querySelector(".countdown-text");
+    const timerDays = document.querySelectorAll(".count_1>span");
+    const timerHours = document.querySelectorAll(".count_2>span");
+    const timerMinutes = document.querySelectorAll(".count_3>span");
+    const timerSeconds = document.querySelectorAll(".count_4>span");
+    let saleLabel = document.querySelectorAll(".countdown-text");
 
     const getTimeRemain = () => {
         let dateStop = new Date(deadline).getTime();
@@ -34,10 +34,18 @@ export const timer = (deadline) => {
             getTime.days = "0" + getTime.days;
         }
         
-        timerDays.textContent = getTime.days;
-        timerHours.textContent = getTime.hours;
-        timerMinutes.textContent = getTime.minutes;
-        timerSeconds.textContent = getTime.seconds;
+        timerDays.forEach(timer => {
+            timer.textContent = getTime.days;
+        });
+        timerHours.forEach(timer => {
+            timer.textContent = getTime.hours;
+        });
+        timerMinutes.forEach(timer => {
+            timer.textContent = getTime.minutes;
+        });
+        timerSeconds.forEach(timer => {
+            timer.textContent = getTime.seconds;
+        });
 
         // if (getTime.timeRemain > 0){
         //     setTimeout(updateClock, 1000);
@@ -46,18 +54,27 @@ export const timer = (deadline) => {
     
     const startTimer = () => {
         let getTime = getTimeRemain();
-    if (getTime.timeRemain > 0){
+        if (getTime.timeRemain > 0){
             setInterval(updateClock, 1000);
         } else {
-            timerDays.textContent = "00";
-            timerHours.textContent = "00";
-            timerMinutes.textContent = "00";
-            timerSeconds.textContent = "00";
+            timerDays.forEach(timer => {
+                timer.textContent = "00";
+            });
+            timerHours.forEach(timer => {
+                timer.textContent = "00";
+            });
+            timerMinutes.forEach(timer => {
+                timer.textContent = "00";
+            });
+            timerSeconds.forEach(timer => {
+                timer.textContent = "00";
+            });
 
             let newStr = "Акция закончилась!";
-            saleLabel.innerHTML = newStr + saleLabel.innerHTML.substring(24);
+            saleLabel.forEach(label => {
+                label.innerHTML = newStr + label.innerHTML.substring(24);
+            });
         }
-
     };
     startTimer();
 };
