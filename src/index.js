@@ -1,11 +1,18 @@
 import { swiper } from "./modules/swiper";
 import { modal } from "./modules/modal";
-import { modalCall } from "./modules/modalCall";
 import { timer } from './modules/timer';
-import { calc } from './modules/calc';
+import { menu } from './modules/menu';
 
-calc();
-modal();
-modalCall();
+const btn = document.querySelector(".btn-block.fancyboxModal");
+modal(btn, ".header-modal", "header-modal__close");
+
+const saleBtn = document.querySelector(".btn-success.fancyboxModal");
+modal(saleBtn, ".header-modal", "header-modal__close");
+
+const btnCall = document.querySelectorAll(".service-button");
+btnCall.forEach(btn => {
+    modal(btn, ".services-modal", "services-modal__close");
+});
+menu();
 swiper();
 timer('16 january 2022');
