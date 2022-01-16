@@ -1,4 +1,5 @@
 import { swiper } from "./modules/swiper";
+import { slider } from "./modules/slider";
 import { modal } from "./modules/modal";
 import { timer } from './modules/timer';
 import { menu } from './modules/menu';
@@ -16,4 +17,5 @@ btnCall.forEach(btn => {
 
 menu();
 swiper();
+slider();
 timer('22 january 2022');
