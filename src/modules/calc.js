@@ -30,8 +30,10 @@ export const calc = () => {
 
     };
     
-    calcBlock.addEventListener("input", (e) =>{
-        console.log(e.target);
-        countCalc();
-    });
+    if (calcBlock){
+        calcBlock.addEventListener("input", (e) =>{
+            console.log(e.target);
+            countCalc();
+        });
+    }
 };
