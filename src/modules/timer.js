@@ -46,7 +46,7 @@ export const timer = (deadline) => {
     
     const startTimer = () => {
         let getTime = getTimeRemain();
-    if (getTime.timeRemain > 0){
+        if (getTime.timeRemain > 0){
             setInterval(updateClock, 1000);
         } else {
             timerDays.textContent = "00";
@@ -57,7 +57,6 @@ export const timer = (deadline) => {
             let newStr = "Акция закончилась!";
             saleLabel.innerHTML = newStr + saleLabel.innerHTML.substring(24);
         }
-
     };
     startTimer();
 };

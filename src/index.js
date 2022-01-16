@@ -13,6 +13,7 @@ const btnCall = document.querySelectorAll(".service-button");
 btnCall.forEach(btn => {
     modal(btn, ".services-modal", "services-modal__close");
 });
+
 menu();
 swiper();
-timer('22 january 2022');
+timer('12 january 2022');
