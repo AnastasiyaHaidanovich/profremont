@@ -16,8 +16,4 @@ btnCall.forEach(btn => {
 
 menu();
 swiper();
-<<<<<<< HEAD
 timer('16 january 2022');
-=======
-timer('12 january 2022');
->>>>>>> modal
