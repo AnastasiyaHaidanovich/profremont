@@ -3,6 +3,8 @@ import { slider } from "./modules/slider";
 import { modal } from "./modules/modal";
 import { timer } from './modules/timer';
 import { menu } from './modules/menu';
+import { sendForm } from './modules/sendForm';
+import { validation } from './modules/validation';
 
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
@@ -18,6 +20,8 @@ btnCall.forEach(btn => {
     modal(btn, ".services-modal", "services-modal__close");
 });
 
+validation();
+sendForm();
 menu();
 swiper();
 slider();
