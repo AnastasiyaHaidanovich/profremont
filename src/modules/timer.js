@@ -5,6 +5,8 @@ export const timer = (deadline) => {
     const timerSeconds = document.querySelectorAll(".count_4>span");
     let saleLabel = document.querySelectorAll(".countdown-text");
 
+    let idInterval;
+
     const getTimeRemain = () => {
         let dateStop = new Date(deadline).getTime();
         let dateNow = new Date().getTime();
@@ -21,6 +23,9 @@ export const timer = (deadline) => {
 
     const updateClock = () => {
         let getTime = getTimeRemain();
+        if(getTime.timeRemain < 1){
+            clearInterval(idInterval);
+        }
         if(getTime.hours < 10){
             getTime.hours = "0" + getTime.hours;
         } 
@@ -55,7 +60,7 @@ export const timer = (deadline) => {
     const startTimer = () => {
         let getTime = getTimeRemain();
         if (getTime.timeRemain > 0){
-            setInterval(updateClock, 1000);
+            idInterval = setInterval(updateClock, 1000);
         } else {
             timerDays.forEach(timer => {
                 timer.textContent = "00";

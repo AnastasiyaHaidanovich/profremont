@@ -18,4 +18,4 @@ btnCall.forEach(btn => {
 menu();
 swiper();
 slider();
-timer('22 january 2022');
+timer('09:37:00 17 january 2022');
