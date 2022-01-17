@@ -23,7 +23,7 @@ export const timer = (deadline) => {
 
     const updateClock = () => {
         let getTime = getTimeRemain();
-        if(getTime.timeRemain < 0){
+        if(getTime.timeRemain <= 0){
             clearInterval(idInterval);
             let newStr = "Акция закончилась!";
             saleLabel.forEach(label => {
