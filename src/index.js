@@ -6,6 +6,9 @@ import { menu } from './modules/menu';
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 
+const link = document.getElementById("about").querySelector(".fancyboxModal");
+modal(link, ".header-modal", "header-modal__close");
+
 const saleBtn = document.querySelector(".btn-success.fancyboxModal");
 modal(saleBtn, ".header-modal", "header-modal__close");
 
