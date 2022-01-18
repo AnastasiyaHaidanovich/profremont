@@ -50,7 +50,7 @@ export const sendForm = (formName) => {
         form.append(statusBlock); 
         if(document.getElementById("calc-total") !== 0){
             formBody = {
-                "calc": document.getElementById("calc-total").value,
+                "calc": document.getElementById("calc-total").placeholder,
             };
             console.log(formBody);
         }

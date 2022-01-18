@@ -1,5 +1,5 @@
 export const validation = () => {
-    const inputs = document.querySelectorAll(".form-control");
+    const inputs = document.querySelectorAll(".form-control.required");
     inputs.forEach(input => {
         if (input.name == "phone"){
             input.addEventListener("input", (e) => {

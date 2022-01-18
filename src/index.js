@@ -1,3 +1,4 @@
+import { calc } from './modules/calc';
 import { swiper } from "./modules/swiper";
 import { slider } from "./modules/slider";
 import { modal } from "./modules/modal";
@@ -5,9 +6,8 @@ import { timer } from './modules/timer';
 import { menu } from './modules/menu';
 import { sendForm } from './modules/sendForm';
 import { validation } from './modules/validation';
-import { calc } from './modules/calc';
 
-calc();
+
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 
@@ -35,3 +35,4 @@ sendForm("callback-form");
 sendForm("callback-form2");
 sendForm("application-form");
 sendForm("application-form2");
+
