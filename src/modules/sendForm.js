@@ -15,7 +15,7 @@ export const sendForm = (formName) => {
             if (elem.name === "fio" && elem.value.length >= 2){
                successName = /[а-яa-z\ ]+/i.test(elem.value);            
             } 
-            if (elem.name === "phone" && elem.value.length <= 17){
+            if (elem.name === "phone" && elem.value.length >= 6 && elem.value.length <= 17){
                 successPhone = /[0-9+]+/.test(elem.value);
             }                    
         });
@@ -48,11 +48,10 @@ export const sendForm = (formName) => {
         
         statusBlock.style.color = "darkgrey";
         form.append(statusBlock); 
-        if(document.getElementById("calc-total") !== 0){
+        if(document.getElementById("calc-total") && document.getElementById("calc-total").placeholder !== "Итого"){
             formBody = {
                 "calc": document.getElementById("calc-total").placeholder,
             };
-            console.log(formBody);
         }
 
         formData.forEach((value, key) => {
@@ -95,6 +94,9 @@ export const sendForm = (formName) => {
             e.preventDefault();
 
             submitForm();        
+            setTimeout(() => {
+                statusBlock.remove();
+            }, 3000);
         });
     } catch(error) {
         console.log(error.message);

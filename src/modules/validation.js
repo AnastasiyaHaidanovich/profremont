@@ -3,6 +3,14 @@ export const validation = () => {
     inputs.forEach(input => {
         if (input.name == "phone"){
             input.addEventListener("input", (e) => {
+                // if (e.target.value.length < 2){
+                //     console.dir(e.target)
+                //     e.target.classList.add("error");
+                    
+                // } else {
+                //     e.target.classList.remove("error");
+                // }
+
                 if(e.target.value.match(/\d+/)){
                     let name = e.target.value.match(/\d+/)[0];
                     e.target.value = name;
@@ -21,6 +29,7 @@ export const validation = () => {
                     e.target.value = name;
                 } else {
                     e.target.value = "";
+                    e.target.classList.add("error");
                 }
             });
         }        

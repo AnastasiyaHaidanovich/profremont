@@ -1,5 +1,4 @@
 import { animate } from './helpers';
-import { sendForm } from './sendForm';
 
 export const modal = (btn, modalClass, closeBtnClass) => {
     const modal = document.querySelector(modalClass);
