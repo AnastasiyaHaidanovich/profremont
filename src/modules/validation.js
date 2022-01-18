@@ -3,14 +3,11 @@ export const validation = () => {
     inputs.forEach(input => {
         if (input.name == "phone"){
             input.addEventListener("input", (e) => {
-                // if (e.target.value.length < 2){
-                //     console.dir(e.target)
-                //     e.target.classList.add("error");
-                    
-                // } else {
-                //     e.target.classList.remove("error");
-                // }
-
+                if (e.target.value.length < 7){
+                    e.target.classList.add("error");
+                } else {
+                    e.target.classList.remove("error");
+                }
                 if(e.target.value.match(/\d+/)){
                     let name = e.target.value.match(/\d+/)[0];
                     e.target.value = name;
@@ -25,6 +22,13 @@ export const validation = () => {
         } else {
             input.addEventListener("input", (e) => {
                 if(e.target.value.match(/[а-яa-z\ ]+/i)){
+                    if (e.target.value.length < 2){
+                        e.target.classList.add("error");
+                        
+                    } else {
+                        e.target.classList.remove("error");
+                    }
+
                     let name = e.target.value.match(/[а-яa-z\ ]+/i)[0];
                     e.target.value = name;
                 } else {
