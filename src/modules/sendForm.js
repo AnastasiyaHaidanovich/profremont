@@ -42,12 +42,18 @@ export const sendForm = (formName) => {
     const submitForm = () => {
         const formElements = form.querySelectorAll(".form-control");
         const formData = new FormData(form);
-        const formBody = {};
+        let formBody = {};
         
         statusBlock.textContent = loadText;
         
         statusBlock.style.color = "darkgrey";
         form.append(statusBlock); 
+        if(document.getElementById("calc-total") !== 0){
+            formBody = {
+                "calc": document.getElementById("calc-total").value,
+            };
+            console.log(formBody);
+        }
 
         formData.forEach((value, key) => {
             formBody[key] = value;

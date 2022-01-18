@@ -4,12 +4,11 @@ export const calc = () => {
     const calcSquare = document.getElementById("calc-input");
     const calcTypeMaterial = document.getElementById("calc-type-material");
     const total = document.getElementById("calc-total");
-console.log(calcBlock)
+    
     const countCalc = () => {
         const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
         const calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
         const calcSquareValue = calcSquare.value;
-
         let totalValue = 0;
 
         if (calcTypeValue && calcTypeMaterialValue && calcSquareValue){
