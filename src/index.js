@@ -9,6 +9,9 @@ import { validation } from './modules/validation';
 import { smoothScroll } from './modules/smoothScroll';
 
 smoothScroll();
+swiper();
+slider();
+
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 
@@ -26,8 +29,6 @@ btnCall.forEach(btn => {
 calc();
 validation();
 menu();
-swiper();
-slider();
 timer('22 january 2022');
 
 sendForm("action-form");

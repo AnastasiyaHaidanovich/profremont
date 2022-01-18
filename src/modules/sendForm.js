@@ -48,7 +48,7 @@ export const sendForm = (formName) => {
         
         statusBlock.style.color = "darkgrey";
         form.append(statusBlock); 
-        if(document.getElementById("calc-total") !== 0){
+        if(document.getElementById("calc-total") && document.getElementById("calc-total") !== 0){
             formBody = {
                 "calc": document.getElementById("calc-total").placeholder,
             };
