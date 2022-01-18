@@ -81,7 +81,10 @@ export const sendForm = (formName) => {
                 statusBlock.textContent = errorText;
             });
         } else {
-            alert("Данные не валидны");
+            formElements.forEach(elem => {
+                elem.classList.add("error");
+            });
+            // alert("Данные не валидны");
             statusBlock.remove();
         }
     };
