@@ -3,7 +3,9 @@ import { slider } from "./modules/slider";
 import { modal } from "./modules/modal";
 import { timer } from './modules/timer';
 import { menu } from './modules/menu';
+import { calc } from './modules/calc';
 
+calc();
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 

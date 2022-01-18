@@ -32,7 +32,7 @@ export const calc = () => {
     
     if (calcBlock){
         calcBlock.addEventListener("input", (e) =>{
-            console.log(e.target);
+            // console.log(e.target);
             countCalc();
         });
     }
