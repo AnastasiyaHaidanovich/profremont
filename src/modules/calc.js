@@ -4,7 +4,7 @@ export const calc = () => {
     const calcSquare = document.getElementById("calc-input");
     const calcTypeMaterial = document.getElementById("calc-type-material");
     const total = document.getElementById("calc-total");
-
+console.log(calcBlock)
     const countCalc = () => {
         const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
         const calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
@@ -32,7 +32,6 @@ export const calc = () => {
     
     if (calcBlock){
         calcBlock.addEventListener("input", (e) =>{
-            console.log(e.target);
             countCalc();
         });
     }
