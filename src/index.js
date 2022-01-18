@@ -6,8 +6,9 @@ import { timer } from './modules/timer';
 import { menu } from './modules/menu';
 import { sendForm } from './modules/sendForm';
 import { validation } from './modules/validation';
+import { smoothScroll } from './modules/smoothScroll';
 
-
+smoothScroll();
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 
