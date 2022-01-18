@@ -3,6 +3,8 @@ import { slider } from "./modules/slider";
 import { modal } from "./modules/modal";
 import { timer } from './modules/timer';
 import { menu } from './modules/menu';
+import { sendForm } from './modules/sendForm';
+import { validation } from './modules/validation';
 import { calc } from './modules/calc';
 
 calc();
@@ -20,7 +22,16 @@ btnCall.forEach(btn => {
     modal(btn, ".services-modal", "services-modal__close");
 });
 
+calc();
+validation();
 menu();
 swiper();
 slider();
 timer('22 january 2022');
+
+sendForm("action-form");
+sendForm("action-form2");
+sendForm("callback-form");
+sendForm("callback-form2");
+sendForm("application-form");
+sendForm("application-form2");

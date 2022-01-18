@@ -3,7 +3,6 @@ export const slider = () => {
     const sliderBlock = services.querySelector(".row");
     let slides = services.querySelectorAll(".col-md-12.col-lg-6");
     const arrows = services.querySelector(".services-arrows");
-
     if (sliderBlock){
 
         const showSlides = (slides) => {
