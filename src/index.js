@@ -6,7 +6,9 @@ import { menu } from './modules/menu';
 import { sendForm } from './modules/sendForm';
 import { validation } from './modules/validation';
 import { calc } from './modules/calc';
+import { certificates } from './modules/certificates';
 
+certificates();
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
 
