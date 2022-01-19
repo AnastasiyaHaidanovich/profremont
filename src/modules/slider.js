@@ -1,13 +1,12 @@
 export const slider = () => {
     const services = document.getElementById("services");
     const sliderBlock = services.querySelector(".row");
-    let slides = services.querySelectorAll(".col-md-12.col-lg-6");
+    let slides = services.querySelectorAll(".col-md-12.col-lg-6");  
+    let slidesArray = Array.prototype.slice.call(slides);  
     const arrows = services.querySelector(".services-arrows");
     if (sliderBlock){
-
         const showSlides = (slides) => {
-            slides = services.querySelectorAll(".col-md-12.col-lg-6");
-            slides.forEach((slide, index) => {
+            slidesArray.forEach((slide, index) => {
                 if (document.documentElement.scrollWidth > 576){
                     if(index == 0 || index == 1){
                         slide.style.display = "inline";
@@ -25,22 +24,8 @@ export const slider = () => {
         };        
 
         const addSlide = (bool) => {
-            slides = services.querySelectorAll(".col-md-12.col-lg-6");
-            let slidesArray = Array.prototype.slice.call(slides);
             let movedSlide = (bool ? slidesArray.shift() : slidesArray.pop());
-            slides.forEach((elem,index) => {
-                if(index == (bool ? 0 : slides.length-1)){
-                    elem.remove();
-                }
-            });
-
             bool ? slidesArray.push(movedSlide) : slidesArray.unshift(movedSlide);
-
-            let newSlide = document.createElement("div");
-            newSlide.classList.add("col-md-12.col-lg-6");
-            newSlide = movedSlide.cloneNode(true);
-
-            bool ? sliderBlock.append(newSlide) : sliderBlock.insertAdjacentElement("afterbegin", newSlide);
         };
         
         showSlides(slides);
@@ -51,20 +36,15 @@ export const slider = () => {
     
         arrows.addEventListener('click', (e) => {
             e.preventDefault();    
-            if (e.target.closest(".services__arrow--right")) {
-                addSlide(true);       
-                if (document.documentElement.scrollWidth > 576){
-                    addSlide(true); 
-                }                         
-                showSlides(slides);
-                
-            } else if (e.target.closest(".services__arrow--left")) {                
-                addSlide(false);       
-                if (document.documentElement.scrollWidth > 576){
-                    addSlide(false); 
-                }  
-                showSlides(slides);
-            } 
+            const right = e.target.closest(".services__arrow--right");
+            const left = e.target.closest(".services__arrow--left");
+
+            if (!(left || right)) return;
+            addSlide(!!right);       
+            if (document.documentElement.scrollWidth > 576){
+                addSlide(!!right); 
+            }  
+            showSlides(slides);
         });
     } else {return;}
 };
