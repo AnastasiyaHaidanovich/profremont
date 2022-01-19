@@ -23,7 +23,7 @@ export const certificates = () => {
 
             modal.style.display = "block";
             modal.style.position = "fixed";
-            modal.style.height = "100%";
+            modal.style.height = "95%";
             modal.style.top = "50%";
             modal.style.left = "50%";
             modal.style.transform = "translate(-50%, -50%)";
