@@ -3,35 +3,7 @@ import { animate } from './helpers';
 export const modal = (btn, modalClass, closeBtnClass) => {
     const modal = document.querySelector(modalClass);
     const overlay = document.querySelector(".overlay");
-
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const smoothOpen = () => {
-            modal.style.display = "block";
-            modal.style.opacity = 0;
-            overlay.style.display = "block";
-            overlay.style.opacity = 0;
-
-            animate({
-                duration: 1000,
-                timing(timeFraction) {
-                  return timeFraction;
-                },
-                draw(progress) {
-                  modal.style.opacity = progress;
-                  overlay.style.opacity = progress;
-                }
-            });
-        };
-        
-        if(window.innerWidth > 768){
-            smoothOpen();
-        } else {
-            modal.style.display = "block";
-            overlay.style.display = "block";
-        }
-
-    });
+    const body = document.querySelector("body");
 
     const smoothClose = () => {
         animate({
@@ -50,13 +22,34 @@ export const modal = (btn, modalClass, closeBtnClass) => {
         }, 1000);
     };
 
-    // closeBtn.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     modal.style.display = "none";
-    //     overlay.style.display = "none";
-    // });
+    body.addEventListener('click', (e) => {
+        if(e.target.closest(btn)){
+            e.preventDefault();
+            const smoothOpen = () => {
+                modal.style.display = "block";
+                modal.style.opacity = 0;
+                overlay.style.display = "block";
+                overlay.style.opacity = 0;
 
-    modal.addEventListener('click', (e) => {
+                animate({
+                    duration: 1000,
+                    timing(timeFraction) {
+                    return timeFraction;
+                    },
+                    draw(progress) {
+                    modal.style.opacity = progress;
+                    overlay.style.opacity = progress;
+                    }
+                });
+            };
+            
+            if(window.innerWidth > 768){
+                smoothOpen();
+            } else {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
         if(e.target.classList.contains(closeBtnClass)){
             if (window.innerWidth > 768){
                 smoothClose();
@@ -64,8 +57,7 @@ export const modal = (btn, modalClass, closeBtnClass) => {
                 modal.style.display = "none";
                 overlay.style.display = "none";
             }
-        }
-        
+        }        
     });
 };
 
