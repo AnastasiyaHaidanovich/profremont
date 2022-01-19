@@ -8,7 +8,9 @@ import { sendForm } from './modules/sendForm';
 import { validation } from './modules/validation';
 import { smoothScroll } from './modules/smoothScroll';
 import { certificates } from './modules/certificates';
+import { comments } from './modules/comments';
 
+comments();
 smoothScroll();
 swiper();
 slider();
