@@ -7,10 +7,12 @@ import { menu } from './modules/menu';
 import { sendForm } from './modules/sendForm';
 import { validation } from './modules/validation';
 import { smoothScroll } from './modules/smoothScroll';
+import { certificates } from './modules/certificates';
 
 smoothScroll();
 swiper();
 slider();
+certificates();
 
 const btn = document.querySelector(".btn-block.fancyboxModal");
 modal(btn, ".header-modal", "header-modal__close");
