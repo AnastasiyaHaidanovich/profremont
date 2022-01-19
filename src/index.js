@@ -14,19 +14,13 @@ swiper();
 slider();
 certificates();
 
-const btn = document.querySelector(".btn-block.fancyboxModal");
-modal(btn, ".header-modal", "header-modal__close");
+modal(".btn-warning", ".header-modal", "header-modal__close");
 
-const link = document.getElementById("about").querySelector(".fancyboxModal");
-modal(link, ".header-modal", "header-modal__close");
+modal(".btn-lg", ".header-modal", "header-modal__close");
 
-const saleBtn = document.querySelector(".btn-success.fancyboxModal");
-modal(saleBtn, ".header-modal", "header-modal__close");
+modal(".open-modal", ".header-modal", "header-modal__close");
 
-const btnCall = document.querySelectorAll(".service-button");
-btnCall.forEach(btn => {
-    modal(btn, ".services-modal", "services-modal__close");
-});
+modal(".btn-sm", ".services-modal", "services-modal__close");
 
 calc();
 validation();
