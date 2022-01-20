@@ -16,10 +16,6 @@ swiper();
 slider();
 certificates();
 
-<<<<<<< HEAD
-=======
-modal();
->>>>>>> comments
 calc();
 validation();
 modal();
