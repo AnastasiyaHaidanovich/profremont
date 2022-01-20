@@ -43,7 +43,7 @@ export const comments = () => {
     };
 
     const getData = () => {
-        return fetch('./../comments.json').then(res => res.json()).then(data => {
+        return fetch('./comments.json').then(res => res.json()).then(data => {
             if(document.querySelector(".loader-block")){
                 document.querySelector(".loader-block").remove();
             }        
