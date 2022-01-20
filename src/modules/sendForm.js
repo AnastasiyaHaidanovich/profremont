@@ -15,7 +15,7 @@ export const sendForm = (formName) => {
             if (elem.name === "fio" && elem.value.length >= 2){
                successName = /[а-яa-z\ ]+/i.test(elem.value);            
             } 
-            if (elem.name === "phone" && elem.value.length >= 6 && elem.value.length <= 17){
+            if (elem.name === "phone" && elem.value.length > 6 && elem.value.length <= 17){
                 successPhone = /[0-9+]+/.test(elem.value);
             }                    
         });
@@ -85,7 +85,9 @@ export const sendForm = (formName) => {
             });
         } else {
             formElements.forEach(elem => {
-                elem.classList.add("error");
+                if(elem.value == ""){
+                    elem.classList.add("error");
+                }
             });
             // alert("Данные не валидны");
             statusBlock.remove();
