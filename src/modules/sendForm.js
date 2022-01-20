@@ -74,6 +74,9 @@ export const sendForm = (formName) => {
             .then(data => {
                 formElements.forEach(elem => {
                     elem.value = "";
+                    if (elem.classList.contains("error")){
+                        elem.classList.remove("error");
+                    }
                 });
                 statusBlock.textContent = successText;
             })
