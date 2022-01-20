@@ -25,9 +25,7 @@ export const comments = () => {
         document.getElementById("reviews").querySelector(".row").insertAdjacentElement("afterbegin",loaderBlock);
     };
 
-    const getData = () => {
-        return fetch('./../comments.json').then(res => res.json());
-    };
+    
 
     const addComment = (index,data) => {
         let comment = ((index % 2 == 1) ? newComment : newComment2).cloneNode(true);
@@ -44,24 +42,33 @@ export const comments = () => {
         commentsContainer.append(comment);
     };
 
+    const getData = () => {
+        return fetch('./../comments.json').then(res => res.json()).then(data => {
+            if(document.querySelector(".loader-block")){
+                document.querySelector(".loader-block").remove();
+            }        
+        
+            addComment(1, data);
+            addComment(2, data);
+            addComment(3, data);
+
+            let counter = 4;
+            let timerId = setInterval(() => {
+                commentItems = document.querySelectorAll(".comment-item");
+                commentItems[0].remove();
+                addComment(counter%6, data);
+                counter++;
+            }, 20000); 
+        })
+        .catch(function(error) {
+            console.log(error.message);
+        });    
+    };
     document.addEventListener("DOMContentLoaded", addLoader());
 
-    getData().then(data => {
-        document.querySelector(".loader-block").remove();
-        
-        addComment(1, data);
-        addComment(2, data);
-        addComment(3, data);
+    window.onload =  function() {
+        getData();
+    };
+    // setTimeout(getData,2000);
 
-        let counter = 4;
-        let timerId = setInterval(() => {
-            commentItems = document.querySelectorAll(".comment-item");
-            commentItems[0].remove();
-            addComment(counter%6, data);
-            counter++;
-        }, 20000); 
-    })
-    .catch(function(error) {
-        console.log(error.message);
-    });    
 };
