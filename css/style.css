@@ -902,6 +902,19 @@ p.services-image_mobile {
     opacity: 1;
   }
 }
+#loader {
+  animation: loader 1s steps(12) infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg)
+  }
+  
+  to {
+    transform: rotate(360deg)
+  }
+}
 @keyframes rotateInUpLeft {
   from {
     -webkit-transform-origin: left bottom;
