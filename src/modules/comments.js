@@ -1,6 +1,6 @@
 export const comments = () => {
     const commentsContainer = document.querySelector(" .comments-container");
-    let commentItems = document.querySelectorAll(".comment-item");
+    let commentItems = document.querySelectorAll(".comments-item");
     let newComment = commentItems[0].cloneNode(true);
     let newComment2 = commentItems[1].cloneNode(true);
 
@@ -54,7 +54,7 @@ export const comments = () => {
 
             let counter = 4;
             let timerId = setInterval(() => {
-                commentItems = document.querySelectorAll(".comment-item");
+                commentItems = document.querySelectorAll(".comments-item");
                 commentItems[0].remove();
                 addComment(counter%6, data);
                 counter++;
