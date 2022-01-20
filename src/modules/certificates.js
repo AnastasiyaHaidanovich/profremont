@@ -19,8 +19,9 @@ export const certificates = () => {
             mainOverlay.style.display = "block";
 
             img.setAttribute("src", `${doc.href}`);
-            img.style.height = "100%";
-
+            img.style.maxHeight = "100%";
+            img.style.maxWidth = "100%";
+            
             modal.style.display = "block";
             modal.style.position = "fixed";
             modal.style.height = "95%";
@@ -28,7 +29,7 @@ export const certificates = () => {
             modal.style.left = "50%";
             modal.style.transform = "translate(-50%, -50%)";
             modal.style.zIndex = "9999";
-
+            
             modal.append(img);
             docsSection.append(modal);   
 
