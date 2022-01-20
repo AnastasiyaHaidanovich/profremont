@@ -14,16 +14,9 @@ swiper();
 slider();
 certificates();
 
-modal(".btn-warning", ".header-modal", "header-modal__close");
-
-modal(".btn-lg", ".header-modal", "header-modal__close");
-
-modal(".open-modal", ".header-modal", "header-modal__close");
-
-modal(".btn-sm", ".services-modal", "services-modal__close");
-
 calc();
 validation();
+modal();
 menu();
 timer('22 january 2022');
 
