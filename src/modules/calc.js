@@ -13,7 +13,6 @@ export const calc = () => {
 
         if (calcTypeValue && calcTypeMaterialValue && calcSquareValue){
             totalValue =  calcTypeValue * calcSquareValue * calcTypeMaterialValue;
-            console.log(totalValue);
             total.placeholder = Math.round(totalValue) + " $";
         } 
 
@@ -31,7 +30,6 @@ export const calc = () => {
     
     if (calcBlock){
         calcBlock.addEventListener("input", (e) =>{
-            console.log(e.target);
             countCalc();
         });
     }

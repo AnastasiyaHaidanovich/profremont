@@ -42,7 +42,7 @@ export const modal = () => {
     };
 
     body.addEventListener('click', (e) => {
-        if(e.target.closest(".btn-warning") || e.target.closest(".btn-lg") || e.target.closest(".open-modal")){
+        if(e.target.closest(".btn-warning.btn-block") || e.target.closest(".btn-lg") || e.target.closest(".open-modal")){
             e.preventDefault();
             
             if(window.innerWidth > 768){
