@@ -11,7 +11,7 @@ export const comments = () => {
         const loaderImg = document.createElement("img");
         const loaderBlock = document.createElement("div");
 
-        loaderImg.setAttribute("src","../../images/loader.svg");
+        loaderImg.setAttribute("src","./images/loader.svg");
         loaderImg.setAttribute("width","100px");
         loaderImg.setAttribute("id","loader");
 
