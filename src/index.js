@@ -16,9 +16,9 @@ swiper();
 slider();
 certificates();
 
-modal();
 calc();
 validation();
+modal();
 menu();
 timer('22 january 2022');
 

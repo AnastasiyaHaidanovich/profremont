@@ -17,17 +17,19 @@ export const certificates = () => {
             const modal = document.createElement("div");
             const img = document.createElement("img");
             mainOverlay.style.display = "block";
-
-            img.setAttribute("src", `${doc.href}`);
-            img.style.height = "100%";
-
-            modal.style.display = "block";
+            
+            modal.style.display = "flex";
+            modal.style.alignItems = "center";
             modal.style.position = "fixed";
-            modal.style.height = "100%";
+            modal.style.height = "95%";
             modal.style.top = "50%";
             modal.style.left = "50%";
             modal.style.transform = "translate(-50%, -50%)";
             modal.style.zIndex = "9999";
+
+            img.setAttribute("src", `${doc.href}`);
+            img.style.maxHeight = "100%";
+            img.style.maxWidth = "100%";
 
             modal.append(img);
             docsSection.append(modal);   
